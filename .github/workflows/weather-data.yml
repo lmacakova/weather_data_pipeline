@@ -1,0 +1,41 @@
+name: Fetch Weather Data
+
+on:
+  schedule:
+    - cron: "0 05 * * *" # Runs daily at 05am UTC
+  workflow_dispatch: # Allows manual triggering of the workflow
+
+jobs:
+  fetch-weather-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Fetch Weather Data
+        run: |
+          #!/bin/bash
+          mkdir -p data/weather
+          wget -O data/weather/$(date +"%Y%m%d_%H%M%S_Athenry.json") https://prodapi.metweb.ie/observations/athenry/today
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add data/weather/
+          git commit -m "Add weather data for $(date +"%Y-%m-%d %H:%M:%S")"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+
+
+
+
+
+
+
+
+
