@@ -4,7 +4,8 @@ on:
   schedule:
     - cron: "0 05 * * *" # Runs daily at 05am UTC
   workflow_dispatch: # Allows manual triggering of the workflow
-
+permissions: 
+  contents: write
 jobs:
   fetch-weather-data:
     runs-on: ubuntu-latest
