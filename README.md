@@ -1,48 +1,37 @@
 # computer_infrastructure
+## Lucia Macakova
 ## Overview
 
-This repository contains my submission for the Computer Infrastructure module assessment. It demonstrates my ability to utilize, configure, and script in a command-line environment, manipulate and move data using the command line, compare software infrastructures and architectures, and select appropriate computational infrastructure for specific tasks.
-
+This repository contains my submission for assessment of  the Computer Infrastructure module. 
 The assessment is divided into two key components:
-2. **Tasks**: A series of command-line tasks (40%).
-3. **Project**: Automation using GitHub Actions (40%).
+1. **Tasks**
+2. **Project**
 
----
-
-## Repository Structure
-
-. ├── data/ │ ├── timestamps/ │ ├── weather/ ├── .github/ │ └── workflows/ │ └── weather-data.yml ├── weather.sh ├── weather.ipynb └── README.md
-
-markdown
-Kopírovať kód
-
----
-
-## Tasks
+## Tasks: 
 
 ### **Task 1: Create Directory Structure**
-Using the command line, I created a `data` directory at the root of the repository. Inside `data`, I added two subdirectories: `timestamps` and `weather`.
+Create a 'data' directory at the root of the repository. Inside 'data', create two subdirectories: 'timestamps' and 'weather'.
 
 ### **Task 2: Timestamps**
-In the `data/timestamps` directory, I used the `date` command to output the current date and time into `now.txt`. By repeating this process ten times and using the `>>` operator, I ensured that new entries were appended rather than overwriting the file. The `more` command was then used to verify the contents.
+In the 'data/timestamps' directory, create file 'now.txt' with 11 timestamps of current time.
 
 ### **Task 3: Formatting Timestamps**
-I formatted the `date` output into the `YYYYmmdd_HHMMSS` format and appended it to a new file called `formatted.txt`. This required referring to the `man date` documentation for formatting options.
+In the 'data/timestamps' directory create a file 'formatted.txt' containing currrent date in YYYYmmdd_HHMMSS format.
 
 ### **Task 4: Create Timestamped Files**
-I used the `touch` command with an embedded `date` command to create empty files named with a timestamp in the `YYYYmmdd_HHMMSS.txt` format.
+In the 'data/timestamps' directory create an empty file named with a timestamp in the YYYYmmdd_HHMMSS.txt format.
 
 ### **Task 5: Download Today's Weather Data**
-In the `data/weather` directory, I downloaded the latest weather data for the Athenry weather station using `wget` with the `-O` option to save it as `weather.json`.
+In the 'data/weather directory', download the latest weather data for the Athenry weather station in https://prodapi.metweb.ie/observations/athenry/today, and save it as 'weather.json'.
 
 ### **Task 6: Timestamp the Data**
-I modified the `wget` command to include a timestamped filename in the `YYYYmmdd_HHMMSS.json` format, ensuring that data downloads were uniquely named.
+Download data from  https://prodapi.metweb.ie/observations/athenry/today into a file with timestamped name, in the YYYYmmdd_HHMMSS.json format.
 
 ### **Task 7: Write the Script**
-I wrote a Bash script, `weather.sh`, to automate the process of downloading and timestamping the weather data. The script was made executable using `chmod +x weather.sh`.
+Write a Bash script, 'weather.sh', to automate the process of downloading and timestamping files from https://prodapi.metweb.ie/observations/athenry/today. Make it executable.
 
 ### **Task 8: Notebook**
-I documented my work in `weather.ipynb`, providing an explanation of each task. The notebook also demonstrates the use of the `pandas` library to read and analyze a weather data file.
+Document your work in 'weather.ipynb', providing an explanation of each task. Describe methods and commands you used.
 
 ### **Task 9: pandas**
 Using the `pandas` library, I loaded a weather data file with the `read_json()` function, summarized its contents, and described the dataset based on information from data.gov.ie.
