@@ -2,7 +2,8 @@
 ## Lucia Macakova
 ## Overview
 
-This repository contains my submission for assessment of  the Computer Infrastructure module. 
+This repository contains my submission for assessment of  the Computer Infrastructure module.
+
 Target is, with bash [^1], to create a  repository with requsted structure, requested files with requested content and  set up a github action that will be downloading data to repository from web page in scheduled time as files with requsted name and requested content.
 Assessment is devided into two sections:
 
