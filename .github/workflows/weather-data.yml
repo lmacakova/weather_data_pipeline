@@ -1,4 +1,4 @@
-name: Download Weather Data
+name: Fetch Weather Data
 
 on:
   schedule:
@@ -7,14 +7,14 @@ on:
 permissions: 
   contents: write # Yes, I must give github action a permission to write into my repository
 jobs:
-  download-weather-data:
+  fetch-weather-data:
     runs-on: ubuntu-latest 
 
     steps:
       - name: Checkout Repository 
         uses: actions/checkout@v4 # clone repository into workflow
 
-      - name: Download Weather Data
+      - name: Fetch Weather Data
         run: |    # run specifies commands that have to be executed. | operator indicates following lines as part of multilined string.
           #!/bin/bash              # script written in weather.sh, too.
           mkdir -p data/weather
