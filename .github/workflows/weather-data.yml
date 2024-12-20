@@ -2,7 +2,7 @@ name: Download Weather Data
 
 on:
   schedule:
-    - cron: "0 05 * * *" # Runs daily at 05am UTC
+    - cron: "0 05 * * *" # Runs daily at 05 AM UTC
   workflow_dispatch: # Allows manual triggering of the workflow
 permissions: 
   contents: write # Yes, I must give github action a permission to write into my repository
@@ -11,24 +11,24 @@ jobs:
     runs-on: ubuntu-latest 
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - name: Checkout Repository 
+        uses: actions/checkout@v4 # clone repository into workflow
 
       - name: Download Weather Data
-        run: |
-          #!/bin/bash
+        run: |    # run specifies commands that have to be executed. | operator indicates following lines as part of multilined string.
+          #!/bin/bash              # script written in weather.sh, too.
           mkdir -p data/weather
           wget -O data/weather/$(date +"%Y%m%d_%H%M%S_Athenry.json") https://prodapi.metweb.ie/observations/athenry/today
 
       - name: Commit and Push Changes
         run: |
-          git config user.name "github-actions"
+          git config user.name "github-actions" # set user name, user email for commit identified as github action
           git config user.email "github-actions@github.com"
-          git add data/weather/
-          git commit -m "Add weather data for $(date +"%Y-%m-%d %H:%M:%S")"
-          git push
+          git add data/weather/ # prepare repository for update
+          git commit -m "Add weather data for $(date +"%Y-%m-%d %H:%M:%S")" --message 'Malice of Sky' # commits changes
+          git push # pushes commit to the repository
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub creates a unique GITHUB_TOKEN secret to use in your workflow
 
 
 
