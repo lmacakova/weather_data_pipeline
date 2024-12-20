@@ -1,20 +1,20 @@
-name: Fetch Weather Data
+name: Download Weather Data
 
 on:
   schedule:
     - cron: "0 05 * * *" # Runs daily at 05am UTC
   workflow_dispatch: # Allows manual triggering of the workflow
 permissions: 
-  contents: write
+  contents: write # Yes, I must give github action a permission to write into my repository
 jobs:
-  fetch-weather-data:
-    runs-on: ubuntu-latest
+  download-weather-data:
+    runs-on: ubuntu-latest 
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Fetch Weather Data
+      - name: Download Weather Data
         run: |
           #!/bin/bash
           mkdir -p data/weather
