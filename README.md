@@ -60,7 +60,7 @@ In your 'weather.ipynb' notebook, use the 'pandas function read_json()' to load 
    Configured the workflow to run weather.sh.
 
 6. **Commit and Push Changes**:  
-   Set up steps to commit new weather data and push changes back to the repository.
+   Set up steps to commit new weather data and push changes back to the repository[^6].
 
 7. **Test the Workflow**:  
    Tested the workflow to ensure it ran as expected and confirmed new data was committed and pushed successfully.
@@ -72,3 +72,4 @@ Resources:
 [^3]: https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#workflow_dispatch
 [^4]: https://en.wikipedia.org/wiki/Ubuntu
 [^5]: https://github.com/actions/checkout
+[^6]: https://graphite.dev/guides/git-add-commit-push
