@@ -57,7 +57,7 @@ In your 'weather.ipynb' notebook, use the 'pandas function read_json()' to load 
    Included a step to clone[^5] the repository in the workflow.
 
 5. **Execute weather.sh Script**:  
-   Configured the workflow to run weather.sh [^6].
+   Configured the workflow to run weather.sh.
 
 6. **Commit and Push Changes**:  
    Set up steps to commit new weather data and push changes back to the repository.
