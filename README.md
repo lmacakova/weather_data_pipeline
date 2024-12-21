@@ -4,7 +4,7 @@
 
 This repository contains my submission for assessment of  the Computer Infrastructure module.
 
-Target is, with bash [^1], to create a  repository with requsted structure, requested files with requested content and  set up a github action that will be downloading data to repository from web page in scheduled time as files with requsted name and requested content.
+Target is, with bash [^1], to create a  repository with requsted structure, requested files with requested content and  set up a github action that will be downloading data to repository from web page in scheduled time files with requsted name and requested content.
 Assessment is devided into two sections:
 
 1. **Tasks** - a series of task to create the repository
@@ -25,7 +25,7 @@ Use 'date' command to output date in format of YYYYmmdd_HHMMSS. Refer to the dat
 Use the 'touch' command to create an empty file with a name in the 'YYYYmmdd_HHMMSS.txt' format.
 
 ### **Task 5: Download Today's Weather Data**
-Change to the data/weather directory. Download the latest weather data for the Athenry weather station from Met Eireann https://prodapi.metweb.ie/observations/athenry/today using 'wget' command. Use the -O <filename> option to save the file as 'weather.json'.
+Change to the data/weather directory. Download the latest weather data for the Athenry weather station from https://prodapi.metweb.ie/observations/athenry/today using 'wget' command. Use the -O <filename> option to save the file as 'weather.json'.
 
 ### **Task 6: Timestamp the Data**
 Modify the command from Task 5 to save the downloaded file with a timestamped name in the format 'YYYYmmdd_HHMMSS.json'.
@@ -54,10 +54,10 @@ In your 'weather.ipynb' notebook, use the 'pandas function read_json()' to load 
    Specified an Ubuntu virtual machine[^4] for the workflow.
 
 4. **Clone Repository**:  
-   Included a step to clone the repository in the workflow.
+   Included a step to clone[^5] the repository in the workflow.
 
 5. **Execute weather.sh Script**:  
-   Configured the workflow to run weather.sh.
+   Configured the workflow to run weather.sh [^6].
 
 6. **Commit and Push Changes**:  
    Set up steps to commit new weather data and push changes back to the repository.
@@ -67,7 +67,8 @@ In your 'weather.ipynb' notebook, use the 'pandas function read_json()' to load 
 
 ---
 Resources:
-[^1]: https://www.codecademy.com/resources/blog/what-is-bash-used-for
+[^1]: https://www.geeksforgeeks.org/bash-scripting-introduction-to-bash-and-bash-scripting/
 [^2]: https://crontab.guru
 [^3]: https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#workflow_dispatch
 [^4]: https://en.wikipedia.org/wiki/Ubuntu
+[^5]: https://github.com/actions/checkout
