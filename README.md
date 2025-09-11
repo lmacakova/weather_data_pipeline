@@ -1,4 +1,4 @@
-# computer_infrastructure
+# Computer Infrastructure
 ## Lucia Macakova
 ## Overview
 
@@ -65,6 +65,9 @@ In your 'weather.ipynb' notebook, use the 'pandas function read_json()' to load 
 7. **Test the Workflow**:  
    Tested the workflow to ensure it ran as expected and confirmed new data was committed and pushed successfully.
 
+## Contact:
+Lucia Macakova\
+email: G00439449@atu.ie
 ---
 Resources:
 [^1]: https://www.geeksforgeeks.org/bash-scripting-introduction-to-bash-and-bash-scripting/
