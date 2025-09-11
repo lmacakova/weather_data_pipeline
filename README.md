@@ -1,3 +1,4 @@
+![matrix](https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg)
 # Computer Infrastructure
 ## Lucia Macakova
 ## Overview
@@ -68,7 +69,7 @@ In your 'weather.ipynb' notebook, use the 'pandas function read_json()' to load 
 ## Contact:
 Lucia Macakova\
 email: G00439449@atu.ie
----
+
 Resources:
 [^1]: https://www.geeksforgeeks.org/bash-scripting-introduction-to-bash-and-bash-scripting/
 [^2]: https://crontab.guru
