@@ -4,7 +4,7 @@
 ---
 
 ## Overview
-This project automates the collection of meteorological data and stores it in a repository. It uses Bash scripting and GitHub Actions to schedule and run the data pipeline, ensuring weather data is downloaded, timestamped, and version-controlled on a regular basis.
+This project automates the collection of meteorological data and stores it in a repository. It uses Bash scripting[^1] and GitHub Actions[^2] to schedule and run the data pipeline, ensuring weather data is downloaded, timestamped, and version-controlled on a regular basis.
 
 ---
 
@@ -24,9 +24,12 @@ This project automates the collection of meteorological data and stores it in a 
 
 2. Bash Script (weather.sh): Handles fetching and saving weather data with a timestamped filename.
 
-3. GitHub Actions Workflow[^2]:
+3. GitHub Actions Workflow:
+
    -  Runs on a daily schedule via cron[^3].
+
    -  Executes weather.sh inside an Ubuntu[^4] VM.
+
    -  Commits and pushes new data back to the repository[^5].
 
 4. Notebook Analysis: Loads a sample weather dataset with pandas, summarizes contents, and references metadata from data.gov.ie.
@@ -53,7 +56,7 @@ email: G00439449@atu.ie
 
 ---
 
-## References:
+## Resources:
 [^1]: https://www.geeksforgeeks.org/bash-scripting-introduction-to-bash-and-bash-scripting/
 [^2]: https://crontab.guru
 [^3]: https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#workflow_dispatch
