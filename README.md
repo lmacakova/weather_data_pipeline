@@ -10,7 +10,7 @@ This project automates the collection of meteorological data and stores it in a 
 
 ## Key Features
 
--  Automated Data Collection: Weather observations are fetched from Met Éireann’s API.
+-  Automated Data Collection: Weather observations are fetched from Met Éireann’s API[^3].
 -  Timestamps: All files are saved with timestamps (YYYYmmdd_HHMMSS) for tracking and reproducibility.
 -  Data Organization: Collected data is stored under a directory structure (data/timestamps/ and data/weather/).
 -  GitHub Actions Integration: A scheduled workflow runs the pipeline daily, commits new data, and pushes it back to the repository.
@@ -26,11 +26,11 @@ This project automates the collection of meteorological data and stores it in a 
 
 3. GitHub Actions Workflow:
 
-   -  Runs on a daily schedule via cron[^3].
+   -  Runs on a daily schedule via cron[^4].
 
-   -  Executes weather.sh inside an Ubuntu[^4] VM.
+   -  Executes weather.sh inside an Ubuntu[^5] VM.
 
-   -  Commits and pushes new data back to the repository[^5].
+   -  Commits and pushes new data back to the repository[^6].
 
 4. Notebook Analysis: Loads a sample weather dataset with pandas, summarizes contents, and references metadata from data.gov.ie.
 
@@ -58,7 +58,8 @@ email: G00439449@atu.ie
 
 ## Resources:
 [^1]: https://www.geeksforgeeks.org/bash-scripting-introduction-to-bash-and-bash-scripting/
-[^2]: https://crontab.guru
-[^3]: https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#workflow_dispatch
-[^4]: https://en.wikipedia.org/wiki/Ubuntu
-[^5]: https://graphite.dev/guides/git-add-commit-push
+[^2]: https://prodapi.metweb.ie/observations/athenry/today
+[^3]: https://crontab.guru
+[^4]: https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#workflow_dispatch
+[^5]: https://en.wikipedia.org/wiki/Ubuntu
+[^6]: https://graphite.dev/guides/git-add-commit-push
