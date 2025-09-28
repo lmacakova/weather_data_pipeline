@@ -21,11 +21,14 @@ This project automates the collection of meteorological data and stores it in a 
 ## Content:
 
 1. Data Directories: Organized under data/ for timestamps and weather records.
+
 2. Bash Script (weather.sh): Handles fetching and saving weather data with a timestamped filename.
+
 3. GitHub Actions Workflow[^2]:
    -  Runs on a daily schedule via cron[^3].
    -  Executes weather.sh inside an Ubuntu[^4] VM.
    -  Commits and pushes new data back to the repository[^5].
+
 4. Notebook Analysis: Loads a sample weather dataset with pandas, summarizes contents, and references metadata from data.gov.ie.
 
 ---
@@ -33,9 +36,13 @@ This project automates the collection of meteorological data and stores it in a 
 ## Setup:
 1. Clone the repository.
 2. Make weather.sh executable:
+
 `chmod +x weather.sh`
+
 3. Test locally:
+
 `./weather.sh`
+
 4. Push changes to GitHub and verify the workflow runs as scheduled.
 
 ---
