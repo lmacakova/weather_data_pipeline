@@ -14,7 +14,7 @@ This project automates the collection of meteorological data and stores it in a 
 -  Timestamps: All files are saved with timestamps (YYYYmmdd_HHMMSS) for tracking and reproducibility.
 -  Data Organization: Collected data is stored under a directory structure (data/timestamps/ and data/weather/).
 -  GitHub Actions Integration: A scheduled workflow runs the pipeline daily, commits new data, and pushes it back to the repository.
--  Exploration Notebook: A Jupyter notebook (weather.ipynb) provides an overview of the workflow and demonstrates basic data exploration with pandas.
+-  Exploration Notebook: A Jupyter notebook (weather_data_pipeline.ipynb) provides an overview of the workflow and demonstrates basic data exploration with pandas.
 
 ---
 
@@ -32,7 +32,7 @@ This project automates the collection of meteorological data and stores it in a 
 
    -  Commits and pushes new data back to the repository[^6].
 
-4. Notebook Analysis: Loads a sample weather dataset with pandas, summarizes contents, and references metadata from data.gov.ie.
+4. Notebook Analysis: Loads a sample weather dataset with pandas, summarizes contents, and references metadata.
 
 ---
 
