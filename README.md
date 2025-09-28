@@ -48,7 +48,7 @@ email: G00439449@atu.ie
 
 ## References:
 [^1]: https://www.geeksforgeeks.org/bash-scripting-introduction-to-bash-and-bash-scripting/
-[^2]: https://docs.github.com/en/actions/writing-workflows/
-[^3]: choosing-when-your-workflow-runs/events-that-trigger-workflows#workflow_dispatch
+[^2]: https://crontab.guru
+[^3]: https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#workflow_dispatch
 [^4]: https://en.wikipedia.org/wiki/Ubuntu
 [^5]: https://graphite.dev/guides/git-add-commit-push
