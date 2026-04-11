@@ -2,7 +2,7 @@ name: Fetch Weather Data
 
 on:
   schedule:
-    - cron: "0 00 * * *" # Runs daily at midnight UTC
+    - cron: "5 00 * * *" # Runs daily at midnight UTC
   workflow_dispatch: # Allows manual triggering of the workflow
 permissions: 
   contents: write # Yes, I must give github action a permission to write into my repository
