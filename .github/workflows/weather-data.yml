@@ -2,41 +2,46 @@ name: Fetch Weather Data
 
 on:
   schedule:
-    - cron: "5 00 * * *" # Runs daily at midnight UTC
-  workflow_dispatch: # Allows manual triggering of the workflow
-permissions: 
-  contents: write # Yes, I must give github action a permission to write into my repository
+    - cron: "10 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
 jobs:
   fetch-weather-data:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository 
-        uses: actions/checkout@v4 # clone repository into workflow
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Fetch Weather Data
-        run: |    # run specifies commands that have to be executed. | operator indicates following lines as part of multilined string.
-          #!/bin/bash              # script written in weather.sh, too.
-          mkdir -p data/weather
-          wget -O data/weather/$(date +"%Y%m%d_%H%M%S_Athenry.json") https://prodapi.metweb.ie/observations/athenry/today
-
-      - name: Commit and Push Changes
+      - name: Fetch full day of weather data
+        shell: bash
         run: |
-          git config user.name "github-actions" # set user name, user email for commit identified as github action
-          git config user.email "github-actions@github.com"
-          git add data/weather/ # prepare repository for update
-          git commit -m "Add weather data for $(date +"%Y-%m-%d %H:%M:%S")" --message 'Malice of Sky' # commits changes
-          git push # pushes commit to the repository
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub creates a unique GITHUB_TOKEN secret to use in your workflow
+          set -euo pipefail
 
+          mkdir -p data/weather
 
+          FILE_DATE=$(date -u -d "yesterday" +"%Y-%m-%d")
+          FILE_PATH="data/weather/${FILE_DATE}_Athenry.json"
 
+          curl -fsSL "https://prodapi.metweb.ie/observations/athenry/yesterday" -o "$FILE_PATH"
 
+      - name: Commit and push changes
+        shell: bash
+        run: |
+          set -euo pipefail
 
+          git config user.name "YOUR_GITHUB_USERNAME"
+          git config user.email "YOUR_GITHUB_NO_REPLY_EMAIL"
 
+          git add data/weather/
 
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
 
-
-
-
+          git commit -m "Add Athenry weather data"
+          git push
